@@ -13,7 +13,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,500;62..125,700;62..125,800&family=Public+Sans:ital,wght@0,400;0,600;1,400&family=IBM+Plex+Mono:wght@400;500&display=swap">
 <style>
-/* Layout: a single column read like a connection study. Hero pairs the name with a single-line diagram from project to grid; sections are ruled bands with a narrow label column. */
+/* Layout: a single column read like a connection study. Hero states the name, price and buy buttons; sections are ruled bands with a narrow label column. */
 :root {
   --sky: #eef1f4;        /* page ground: drawing-office grey */
   --paper: #f8f9fb;      /* raised surfaces */
@@ -23,7 +23,6 @@
   --feed: #1d4f8c;       /* primary accent: HV feeder blue */
   --feed-soft: #d6e2f1;
   --amber: #c98a00;      /* secondary accent: HV warning amber */
-  --cable: #1c2733;      /* conductors in the diagram */
   --on-feed: #f4f8fd;
   --font-display: "Archivo", "Arial Narrow", "Helvetica Neue", Arial, sans-serif;
   --font-body: "Public Sans", "Segoe UI", system-ui, sans-serif;
@@ -38,13 +37,13 @@
 @media (prefers-color-scheme: dark) {
   :root:not([data-theme="light"]) {
     --sky: #0e151c; --paper: #141e28; --ink: #e4eaf1; --muted: #9caab9; --rule: #283746;
-    --feed: #7fb0ea; --feed-soft: #1a3048; --amber: #f0b429; --cable: #c9d3de; --on-feed: #08131f;
+    --feed: #7fb0ea; --feed-soft: #1a3048; --amber: #f0b429; --on-feed: #08131f;
     color-scheme: dark;
   }
 }
 :root[data-theme="dark"] {
   --sky: #0e151c; --paper: #141e28; --ink: #e4eaf1; --muted: #9caab9; --rule: #283746;
-  --feed: #7fb0ea; --feed-soft: #1a3048; --amber: #f0b429; --cable: #c9d3de; --on-feed: #08131f;
+  --feed: #7fb0ea; --feed-soft: #1a3048; --amber: #f0b429; --on-feed: #08131f;
   color-scheme: dark;
 }
 
@@ -77,7 +76,7 @@ a:focus-visible, .btn:focus-visible { outline: 3px solid var(--amber); outline-o
 }
 
 /* Hero */
-.hero .wrap { padding-block: clamp(40px, 7vw, 80px) 0; display: grid; gap: 28px; }
+.hero .wrap { padding-block: clamp(40px, 7vw, 80px); display: grid; gap: 28px; }
 .hero h1 {
   font-size: var(--step-4);
   font-weight: 800;
@@ -103,23 +102,6 @@ a:focus-visible, .btn:focus-visible { outline: 3px solid var(--amber); outline-o
 .btn-primary:hover { background: var(--ink); border-color: var(--ink); color: var(--sky); }
 .btn-ghost { color: var(--feed); background: transparent; }
 .btn-ghost:hover { background: var(--feed-soft); }
-
-/* Single-line diagram */
-.section-fig { margin: 8px 0 0; min-width: 0; }
-.diagram-scroll { overflow-x: auto; }
-.section-fig svg { display: block; width: 100%; min-width: 560px; height: auto; }
-.section-fig figcaption { padding-block: 8px 0; }
-.sld-wire { fill: none; stroke: var(--cable); stroke-width: 3; }
-.sld-bus { fill: none; stroke: var(--cable); stroke-width: 7; stroke-linecap: square; }
-.sld-coil { fill: var(--sky); stroke: var(--cable); stroke-width: 3; }
-.sld-cb { fill: var(--paper); stroke: var(--cable); stroke-width: 3; }
-.sld-load { fill: var(--paper); stroke: var(--rule); stroke-width: 1.5; }
-.sld-poc { fill: var(--amber); }
-.sld-flow { fill: none; stroke: var(--amber); stroke-width: 3; stroke-dasharray: 10 22; animation: flow 1.6s linear infinite; }
-.fig-text { fill: var(--muted); font-family: var(--font-mono); font-size: 13px; }
-.fig-text-strong { fill: var(--ink); font-family: var(--font-mono); font-size: 13px; font-weight: 500; }
-@keyframes flow { to { stroke-dashoffset: -32; } }
-@media (prefers-reduced-motion: reduce) { .sld-flow { animation: none; } }
 
 /* Sections */
 .band { border-top: 1px solid var(--rule); }
@@ -197,41 +179,6 @@ footer a { color: var(--muted); overflow-wrap: anywhere; }
         </div>
       </div>
 
-      <figure class="section-fig" aria-labelledby="figcap">
-        <div class="diagram-scroll">
-        <svg viewBox="0 0 1000 200" role="img" aria-label="Single-line diagram of a project connecting through a transformer and circuit breaker to a 132 kV grid busbar">
-          <!-- project -->
-          <rect class="sld-load" x="10" y="62" width="190" height="76" rx="3"/>
-          <text class="fig-text-strong" x="105" y="96" text-anchor="middle">Solar · BESS</text>
-          <text class="fig-text-strong" x="105" y="116" text-anchor="middle">Data centre · Homes</text>
-          <!-- wire to transformer -->
-          <path class="sld-wire" d="M200 100 H360"/>
-          <path class="sld-flow" d="M200 100 H360"/>
-          <text class="fig-text" x="280" y="88" text-anchor="middle">33 kV</text>
-          <!-- transformer -->
-          <circle class="sld-coil" cx="388" cy="100" r="28"/>
-          <circle class="sld-coil" cx="428" cy="100" r="28"/>
-          <text class="fig-text" x="408" y="152" text-anchor="middle">33/132 kV</text>
-          <!-- wire to breaker -->
-          <path class="sld-wire" d="M456 100 H580"/>
-          <path class="sld-flow" d="M456 100 H580"/>
-          <!-- breaker -->
-          <rect class="sld-cb" x="580" y="84" width="32" height="32"/>
-          <text class="fig-text" x="596" y="152" text-anchor="middle">CB</text>
-          <!-- wire to busbar -->
-          <path class="sld-wire" d="M612 100 H780"/>
-          <path class="sld-flow" d="M612 100 H780"/>
-          <!-- point of connection -->
-          <circle class="sld-poc" cx="700" cy="100" r="8"/>
-          <text class="fig-text-strong" x="700" y="72" text-anchor="middle">Point of connection</text>
-          <!-- busbar -->
-          <path class="sld-bus" d="M780 30 V170"/>
-          <text class="fig-text-strong" x="800" y="94">132 kV busbar</text>
-          <text class="fig-text" x="800" y="114">Grid supply point</text>
-        </svg>
-        </div>
-        <figcaption id="figcap" class="label">Britain's connection queue · 722 GW waiting before reform, 283 GW prioritised to 2035</figcaption>
-      </figure>
     </div>
   </section>
 
