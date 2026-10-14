@@ -1,34 +1,34 @@
-# GridConnection.co.uk sales lander
+# Deploying GridConnection.co.uk on Cloudflare Pages
 
-A single static page (`index.html`) with no build step, ready for Cloudflare Pages.
+The site is static: `index.html`, `favicon.svg`, `robots.txt` and `_headers`. No build step.
 
 ## Before you deploy
 
-Replace the two placeholder purchase links in `index.html` (search for `data-buy`; each appears twice):
+- **Afternic link:** the buttons point to `https://www.afternic.com/domain/gridconnection.co.uk`. Check it opens your listing (or swap in your exact listing URL). It appears twice in `index.html`.
+- **Escrow.com link:** the buttons point to `https://www.escrow.com/`. Swap in your own pre-filled transaction or "Buy It Now" link if you have one. Also appears twice.
 
-| Button | Current value | Replace with |
-|---|---|---|
-| Buy on Afternic | `https://www.afternic.com/domain/gridconnection.co.uk` (placeholder, the standard Afternic listing URL pattern) | Your live Afternic Buy Now link |
-| Buy via Escrow.com | `https://www.escrow.com/` (placeholder) | Your Escrow.com "Buy It Now" link for this domain |
+## Option A: connect this GitHub repo (auto-deploys on every push)
 
-## Deploy to Cloudflare Pages
+1. Cloudflare dashboard → **Workers & Pages** → **Create** → **Pages** → **Connect to Git**.
+2. Pick `namefolio/gridconnection`, production branch `main`.
+3. Framework preset: **None**. Build command: leave empty. Build output directory: `/`.
+4. **Save and Deploy**, then add the custom domain as below.
 
-Recommended, Git-connected: Cloudflare dashboard > Workers & Pages > Create > Pages > Connect to Git > pick `namefolio/gridconnection`. Framework preset: None. Build command: leave empty. Build output directory: `/`. Every push to `main` then redeploys.
+## Option B: direct upload (no tools)
 
+1. Cloudflare dashboard → **Workers & Pages** → **Create** → **Pages** → **Upload assets**.
+2. Name the project `gridconnection`, drag in the four files, click **Deploy**.
+3. In the project → **Custom domains** → add `gridconnection.co.uk` (and `www.gridconnection.co.uk`). If the domain's DNS is on Cloudflare, records are added for you; otherwise add the CNAME it shows at your registrar.
 
-Option A, drag and drop: Cloudflare dashboard > Workers & Pages > Create > Pages > Upload assets, and upload this folder.
+## Option C: Wrangler CLI
 
-Option B, command line:
-
+```sh
+npm install -g wrangler
+wrangler login
+wrangler pages project create gridconnection --production-branch main
+wrangler pages deploy . --project-name gridconnection --branch main
 ```
-npx wrangler pages deploy . --project-name gridconnection
-```
 
-Then add the custom domain: Pages project > Custom domains > Set up a domain > `gridconnection.co.uk` (and `www.gridconnection.co.uk`). If the domain's DNS is already on Cloudflare the records are added for you; otherwise point a CNAME at `gridconnection.pages.dev`.
+Run the deploy from inside this folder, then add the custom domain as in step 3 above.
 
-## Files
-
-- `index.html` the page (Google Fonts is the only external request)
-- `favicon.svg` tab icon
-- `_headers` basic security headers for Cloudflare Pages
-- `robots.txt` allows indexing
+Note: if the domain is parked at Afternic with their nameservers, pointing it to Cloudflare replaces the Afternic "for sale" parking page with this lander. That's usually what you want; the buy buttons still route to Afternic.
