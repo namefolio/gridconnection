@@ -1,326 +1,232 @@
 <!doctype html>
 <html lang="en-GB">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<meta property="og:title" content="GridConnection.co.uk is for sale">
-<meta property="og:description" content="Exact-match UK domain for grid connections. Available now for £500.">
-<meta property="og:type" content="website">
-<link rel="icon" href="/favicon.svg" type="image/svg+xml">
-<title>GridConnection.co.uk</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>GridConnection.co.uk — Premium domain for sale</title>
 <meta name="description" content="GridConnection.co.uk is for sale. The UK domain for getting connected to the power grid. Buy it now for £500 on Afternic or Escrow.com.">
+<link rel="canonical" href="https://gridconnection.co.uk/">
+<meta name="theme-color" content="#F4F2ED">
+<meta name="color-scheme" content="light only">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Namefolio">
+<meta property="og:locale" content="en_GB">
+<meta property="og:url" content="https://gridconnection.co.uk/">
+<meta property="og:title" content="GridConnection.co.uk — Premium domain for sale">
+<meta property="og:description" content="Get Connected. Own the Category. The UK domain for getting connected to the power grid, £500.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%23f4f2ed'/%3E%3Crect x='11' y='11' width='10' height='10' fill='%23a3d31f'/%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,500;62..125,700;62..125,800&family=Public+Sans:ital,wght@0,400;0,600;1,400&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<link href="https://fonts.googleapis.com/css2?family=Figtree:wght@300..900&display=swap" rel="stylesheet">
 <style>
-/* Layout: a single column read like a connection study. Hero states the name, price and buy buttons; sections are ruled bands with a narrow label column. */
-:root {
-  --sky: #eef1f4;        /* page ground: drawing-office grey */
-  --paper: #f8f9fb;      /* raised surfaces */
-  --ink: #15202b;        /* text */
-  --muted: #536173;      /* secondary text */
-  --rule: #c8d0da;       /* hairlines */
-  --feed: #1d4f8c;       /* primary accent: HV feeder blue */
-  --feed-soft: #d6e2f1;
-  --amber: #c98a00;      /* secondary accent: HV warning amber */
-  --on-feed: #f4f8fd;
-  --font-display: "Archivo", "Arial Narrow", "Helvetica Neue", Arial, sans-serif;
-  --font-body: "Public Sans", "Segoe UI", system-ui, sans-serif;
-  --font-mono: "IBM Plex Mono", ui-monospace, "SFMono-Regular", Menlo, monospace;
-  --step--1: 0.8125rem;
-  --step-0: 1rem;
-  --step-1: 1.25rem;
-  --step-2: 1.75rem;
-  --step-3: clamp(2rem, 5vw, 2.75rem);
-  --step-4: clamp(2.4rem, 8.4vw, 5.25rem);
-}
-@media (prefers-color-scheme: dark) {
-  :root:not([data-theme="light"]) {
-    --sky: #0e151c; --paper: #141e28; --ink: #e4eaf1; --muted: #9caab9; --rule: #283746;
-    --feed: #7fb0ea; --feed-soft: #1a3048; --amber: #f0b429; --on-feed: #08131f;
-    color-scheme: dark;
+  /* Tokens — as namefolio.co.uk */
+  :root {
+    --paper: #f4f2ed;
+    --ink: #171816;
+    --muted: #55564f;
+    --rule: #d8d6cf;
+    --lime: #a3d31f;
+    --ease-editorial: cubic-bezier(0.22, 1, 0.36, 1);
+    color-scheme: only light;
   }
-}
-:root[data-theme="dark"] {
-  --sky: #0e151c; --paper: #141e28; --ink: #e4eaf1; --muted: #9caab9; --rule: #283746;
-  --feed: #7fb0ea; --feed-soft: #1a3048; --amber: #f0b429; --on-feed: #08131f;
-  color-scheme: dark;
-}
 
-* { box-sizing: border-box; }
-body {
-  margin: 0;
-  background: var(--sky);
-  color: var(--ink);
-  font-family: var(--font-body);
-  font-size: var(--step-0);
-  line-height: 1.6;
-  -webkit-font-smoothing: antialiased;
-}
-.wrap {
-  max-width: 1080px;
-  margin: 0 auto;
-  padding-left: max(16px, env(safe-area-inset-left, 0px));
-  padding-right: max(16px, env(safe-area-inset-right, 0px));
-}
-h1, h2, h3 { font-family: var(--font-display); text-wrap: balance; margin: 0; }
-p { margin: 0; max-width: 65ch; }
-a { color: var(--feed); }
-a:focus-visible, .btn:focus-visible { outline: 3px solid var(--amber); outline-offset: 3px; }
-.mono { font-family: var(--font-mono); font-variant-numeric: tabular-nums; }
-.label {
-  font-family: var(--font-mono);
-  font-size: var(--step--1);
-  letter-spacing: 0.02em;
-  color: var(--muted);
-}
+  /* Arial resized to Figtree's metrics so the font swap doesn't shift layout */
+  @font-face {
+    font-family: 'Figtree Fallback';
+    src: local('Arial'), local('ArialMT'), local('Liberation Sans');
+    font-weight: 100 599;
+    size-adjust: 100.3%; ascent-override: 94.72%; descent-override: 24.93%; line-gap-override: 0%;
+  }
+  @font-face {
+    font-family: 'Figtree Fallback';
+    src: local('Arial Bold'), local('Arial-BoldMT'), local('Liberation Sans Bold');
+    font-weight: 600 900;
+    size-adjust: 95.73%; ascent-override: 99.24%; descent-override: 26.12%; line-gap-override: 0%;
+  }
 
-/* Hero */
-.hero .wrap { padding-block: clamp(40px, 7vw, 80px); display: grid; gap: 28px; }
-.hero h1 {
-  font-size: var(--step-4);
-  font-weight: 800;
-  font-stretch: 72%;
-  line-height: 0.95;
-  letter-spacing: -0.01em;
-  overflow-wrap: anywhere;
-}
-.hero h1 .tld { color: var(--feed); }
-.lede { font-size: var(--step-1); line-height: 1.45; color: var(--ink); max-width: 46ch; }
-.offer { display: flex; flex-wrap: wrap; align-items: center; gap: 14px 24px; }
-.price { display: flex; align-items: baseline; gap: 10px; }
-.price strong { font-family: var(--font-display); font-weight: 800; font-stretch: 80%; font-size: var(--step-3); line-height: 1; }
-.btns { display: flex; flex-wrap: wrap; gap: 10px; }
-.btn {
-  display: inline-flex; align-items: center; justify-content: center;
-  min-height: 46px; padding: 0 20px;
-  font-family: var(--font-display); font-weight: 700; font-stretch: 95%; font-size: 1rem;
-  text-decoration: none; border-radius: 3px; border: 2px solid var(--feed);
-  transition: background-color .15s ease, color .15s ease;
-}
-.btn-primary { background: var(--feed); color: var(--on-feed); }
-.btn-primary:hover { background: var(--ink); border-color: var(--ink); color: var(--sky); }
-.btn-ghost { color: var(--feed); background: transparent; }
-.btn-ghost:hover { background: var(--feed-soft); }
+  *, *::before, *::after { box-sizing: border-box; }
+  html {
+    background: var(--paper);
+    color: var(--ink);
+    -webkit-text-size-adjust: 100%;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  body {
+    margin: 0;
+    background: var(--paper);
+    font-family: 'Figtree', 'Figtree Fallback', ui-sans-serif, system-ui, -apple-system, 'Helvetica Neue', Arial, sans-serif;
+    font-size: 1.0625rem;
+    line-height: 1.6;
+    overflow-x: hidden;
+  }
+  h1, h2, h3, p, ul, ol { margin: 0; padding: 0; }
+  ul, ol { list-style: none; }
+  a { color: inherit; text-decoration: none; }
+  ::selection { background: var(--lime); color: var(--ink); }
+  :focus-visible { outline: 2px solid var(--ink); outline-offset: 3px; }
 
-/* Sections */
-.band { border-top: 1px solid var(--rule); }
-.band .wrap { padding-block: clamp(40px, 6vw, 72px); display: grid; grid-template-columns: minmax(0, 220px) minmax(0, 1fr); gap: 24px 48px; }
-.band .side { display: grid; gap: 6px; align-content: start; }
-.band h2 { overflow-wrap: anywhere; font-size: var(--step-2); font-weight: 800; font-stretch: 85%; line-height: 1.1; }
-.band .body { display: grid; gap: 22px; min-width: 0; }
-@media (max-width: 760px) { .band .wrap { grid-template-columns: minmax(0, 1fr); } }
+  .display { font-weight: 700; letter-spacing: -0.015em; line-height: 1.12; }
+  .muted { color: var(--muted); }
 
-/* Figures */
-.figures { display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 1px; background: var(--rule); border: 1px solid var(--rule); }
-.fig { background: var(--paper); padding: 20px; display: grid; gap: 6px; align-content: start; min-width: 0; }
-.fig .num { font-family: var(--font-display); font-weight: 800; font-stretch: 80%; font-size: var(--step-3); line-height: 1; color: var(--feed); font-variant-numeric: tabular-nums; }
-.fig p { font-size: 0.9375rem; color: var(--ink); }
-.fig .src { font-size: var(--step--1); color: var(--muted); }
-.fig .src a { color: var(--muted); }
-.subhead { font-size: var(--step-1); font-weight: 700; font-stretch: 90%; }
+  /* Frame */
+  .page { margin: 0 auto; display: flex; flex-direction: column; min-height: 100svh; width: 100%; max-width: 44rem; padding: 4rem 1.5rem 2.5rem; }
+  main { flex: 1; }
+  @media (min-width: 768px) { .page { padding: 7rem 2.5rem 3.5rem; } }
 
-/* Lists */
-.ticks { list-style: none; margin: 0; padding: 0; display: grid; gap: 12px; }
-.ticks li { display: grid; grid-template-columns: 18px minmax(0, 1fr); gap: 12px; align-items: start; }
-.ticks li::before { content: ""; width: 12px; height: 12px; margin-top: 7px; border: 2px solid var(--feed); border-radius: 50%; }
-.ticks b { font-weight: 600; }
+  /* Wordmark */
+  .wordmark { font-size: 1.25rem; }
+  .wordmark .dot { display: inline-block; width: 0.26em; height: 0.26em; margin-left: 0.06em; background: var(--lime); }
+  @media (min-width: 768px) { .wordmark { font-size: 1.5rem; } }
 
-.who { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 12px; }
-.who div { border-top: 2px solid var(--amber); padding-top: 10px; min-width: 0; }
-.who b { display: block; font-family: var(--font-display); font-stretch: 90%; font-size: 1.0625rem; }
-.who span { color: var(--muted); font-size: 0.9375rem; }
+  /* Hero */
+  .eyebrow { margin-top: 3rem; font-size: 1.125rem; font-weight: 500; }
+  .eyebrow .muted { display: block; font-size: 0.875rem; font-weight: 400; margin-bottom: 0.25rem; }
+  h1 { margin-top: 1.5rem; font-size: clamp(2.5rem, 9vw, 4rem); }
+  h1 span { display: block; }
+  .tagline { margin-top: 1.5rem; max-width: 34rem; font-size: 1.25rem; line-height: 1.5; }
+  @media (min-width: 768px) {
+    .eyebrow { margin-top: 4rem; font-size: 1.25rem; }
+    .tagline { font-size: 1.5rem; }
+  }
 
-.ideas { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 14px; }
-.idea { background: var(--paper); border: 1px solid var(--rule); padding: 18px 20px; display: grid; gap: 6px; align-content: start; min-width: 0; }
-.idea h3 { font-size: 1.125rem; font-weight: 700; font-stretch: 90%; }
-.idea p { font-size: 0.9375rem; color: var(--muted); }
+  /* Sections */
+  .block { margin-top: 3.5rem; }
+  @media (min-width: 768px) { .block { margin-top: 5rem; } }
+  .kicker { font-size: 0.875rem; }
+  h2 { margin-top: 0.5rem; font-size: clamp(1.75rem, 5vw, 2.25rem); }
+  .note { margin-top: 1rem; font-size: 1rem; }
 
-.name-break { font-family: var(--font-display); font-weight: 800; font-stretch: 75%; font-size: var(--step-3); line-height: 1; display: flex; flex-wrap: wrap; gap: 4px 6px; }
-.name-break span { padding: 6px 10px 8px; background: var(--paper); border: 1px solid var(--rule); }
-.name-break span:last-child { color: var(--feed); }
+  /* Ruled list — the namefolio.co.uk domain list */
+  .rows { margin-top: 1.5rem; border-top: 1px solid var(--rule); }
+  .rows > li { border-bottom: 1px solid var(--rule); }
+  .row-link { display: flex; align-items: center; justify-content: space-between; gap: 1rem; padding: 1rem 0; font-size: 1.125rem; font-weight: 500; }
+  .row-link svg { width: 1.5rem; height: 1.5rem; flex-shrink: 0; color: var(--lime); transition: transform 300ms; }
+  .row-link:hover svg { transform: translateX(0.25rem); }
+  .row-item { padding: 1rem 0; }
+  .row-item h3 { font-size: 1.125rem; font-weight: 500; line-height: 1.4; }
+  .row-item p { margin-top: 0.25rem; }
+  .row-item .num { color: var(--lime); font-weight: 700; margin-right: 0.5rem; }
+  .row-item .src { display: block; margin-top: 0.25rem; font-size: 0.875rem; }
+  .row-plain { padding: 1rem 0; font-size: 1.125rem; font-weight: 500; }
+  @media (min-width: 768px) {
+    .row-link, .row-item h3, .row-plain { font-size: 1.25rem; }
+  }
 
-.steps { list-style: none; margin: 0; padding: 0; display: grid; gap: 0; counter-reset: step; }
-.steps li { counter-increment: step; display: grid; grid-template-columns: 44px minmax(0, 1fr); gap: 14px; padding-block: 14px; border-bottom: 1px solid var(--rule); }
-.steps li:first-child { border-top: 1px solid var(--rule); }
-.steps li::before { content: counter(step); font-family: var(--font-mono); font-size: 0.875rem; color: var(--feed); border: 1px solid var(--feed); width: 32px; height: 32px; display: grid; place-items: center; border-radius: 50%; }
-.steps b { display: block; }
-.steps span { color: var(--muted); font-size: 0.9375rem; }
+  /* Footer */
+  footer { margin-top: 5rem; display: flex; flex-wrap: wrap; justify-content: space-between; gap: 0.5rem 1.5rem; font-size: 0.875rem; color: var(--muted); }
+  footer a { text-decoration-color: var(--lime); text-decoration-thickness: 2px; text-underline-offset: 4px; }
+  footer a:hover { color: var(--ink); text-decoration-line: underline; }
+  footer .disclaimer { flex-basis: 100%; }
+  footer .sources { flex-basis: 100%; display: grid; gap: 0.25rem; list-style: decimal; padding-left: 1.2em; }
+  footer .sources a { text-decoration-line: underline; overflow-wrap: anywhere; }
 
-/* Closing */
-.closing { background: var(--feed); color: var(--on-feed); }
-.closing .wrap { padding-block: clamp(44px, 7vw, 80px); display: grid; gap: 18px; }
-.closing .label { color: var(--on-feed); opacity: .8; }
-.closing h2 { overflow-wrap: anywhere; font-size: var(--step-4); font-weight: 800; font-stretch: 72%; line-height: .95; }
-.closing p { font-size: var(--step-1); }
-.closing .btn { border-color: var(--on-feed); }
-.closing .btn-primary { background: var(--on-feed); color: var(--feed); }
-.closing .btn-primary:hover { background: transparent; color: var(--on-feed); }
-.closing .btn-ghost { color: var(--on-feed); }
-.closing .btn-ghost:hover { background: color-mix(in srgb, var(--on-feed) 14%, transparent); }
-
-footer .wrap { padding-block: 28px 40px; display: grid; gap: 10px; color: var(--muted); font-size: var(--step--1); }
-footer ol { margin: 0; padding-left: 1.2em; display: grid; gap: 4px; }
-footer a { color: var(--muted); overflow-wrap: anywhere; }
+  /* Motion — starts at 0.01 so PageSpeed still records LCP */
+  @keyframes rise { from { opacity: 0.01; transform: translateY(10px); } to { opacity: 1; transform: none; } }
+  .enter { opacity: 0.01; animation: rise 700ms var(--ease-editorial) forwards; animation-delay: var(--delay, 0ms); }
+  @media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after { animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; transition-duration: 0.01ms !important; }
+    .enter { opacity: 1; transform: none; animation: none; }
+  }
 </style>
 </head>
 <body>
+<div class="page">
+  <main>
+    <a class="enter display wordmark" href="https://namefolio.co.uk">Namefolio<span aria-hidden="true" class="dot"></span></a>
 
-<main>
-  <section class="hero">
-    <div class="wrap">
-      <h1>GridConnection<span class="tld">.co.uk</span></h1>
-      <p class="lede">Every new solar farm, data centre or housing site in the UK has to do one thing first. It has to get connected to the grid. This domain is the name for that job.</p>
-      <div class="offer">
-        <div class="price"><strong>£500</strong></div>
-        <div class="btns">
-          <a class="btn btn-primary" href="https://www.afternic.com/domain/gridconnection.co.uk" rel="noopener" target="_blank">Buy on Afternic</a>
-          <a class="btn btn-ghost" href="https://www.escrow.com/" rel="noopener" target="_blank">Buy via Escrow.com</a>
-        </div>
-      </div>
-    </div>
-  </section>
+    <p class="enter eyebrow" style="--delay:60ms"><span class="muted">Premium domain for sale</span>GridConnection.co.uk</p>
 
-  <section class="band" id="opportunity">
-    <div class="wrap">
-      <div class="side"><span class="label">01 · The opportunity</span><h2>Why this name, and why now</h2></div>
-      <div class="body">
-        <p>The UK needs far more power lines and substations. Until they are built, new projects have to wait in line to plug in. In many places, that wait now runs into the 2030s.</p>
-        <ul class="ticks">
-          <li><span><b>The line has been reset.</b> In December 2025, the grid operator cut the waiting list from 722 GW to 283 GW. Many firms now have to plan again.</span></li>
-          <li><span><b>Huge sums are being spent.</b> Ofgem has approved £24bn so far. It expects about £80bn to be spent on the grid from 2026 to 2031.</span></li>
-          <li><span><b>Demand is growing fast.</b> Requests to take power from the grid tripled in just seven months. Data centres led the way.</span></li>
-        </ul>
-        <p>All of this sends people online to look for help with grid connections. This domain is the exact phrase they type, with a UK ending.</p>
-      </div>
-    </div>
-  </section>
+    <h1 class="enter display" style="--delay:100ms"><span>Get Connected.</span> <span>Own the Category.</span></h1>
 
-  <section class="band" id="market">
-    <div class="wrap">
-      <div class="side"><span class="label">02 · The market</span><h2>A queue measured in gigawatts</h2></div>
-      <div class="body">
-        <h3 class="subhead">Market size</h3>
-        <div class="figures">
-          <div class="fig">
-            <span class="num mono">722 GW</span>
-            <p>Projects waiting to connect before the reset. That is about four times what the UK needs for its 2030 goals.</p>
-            <span class="src">NESO, December 2025 <a href="#src-1">[1]</a></span>
-          </div>
-          <div class="fig">
-            <span class="num mono">£80bn</span>
-            <p>Planned spending on the power grid from 2026 to 2031. The first £24bn is already approved.</p>
-            <span class="src">Ofgem, July 2025 <a href="#src-2">[2]</a></span>
-          </div>
-          <div class="fig">
-            <span class="num mono">283 GW</span>
-            <p>Projects picked to get a connection by 2035. Of these, 132 GW should connect by 2030.</p>
-            <span class="src">NESO, December 2025 <a href="#src-1">[1]</a></span>
-          </div>
-        </div>
+    <p class="enter tagline muted" style="--delay:150ms">Every new solar farm, data centre or housing site in the UK has to get connected to the grid first. This domain is the name for that job.</p>
 
-        <h3 class="subhead">Growth</h3>
-        <div class="figures">
-          <div class="fig">
-            <span class="num mono">41 → 125 GW</span>
-            <p>Signed requests to take power from the grid, from November 2024 to June 2025. That is three times as much in seven months.</p>
-            <span class="src">Ofgem, cited in <a href="#src-3">[3]</a></span>
-          </div>
-          <div class="fig">
-            <span class="num mono">50.8 GW</span>
-            <p>Power asked for by data centres. That is more than half of all big requests in the queue.</p>
-            <span class="src">NESO, cited in <a href="#src-3">[3]</a></span>
-          </div>
-          <div class="fig">
-            <span class="num mono">81%</span>
-            <p>Share of waiting projects that would take a partial connection if it meant getting power sooner.</p>
-            <span class="src">NESO, cited in <a href="#src-3">[3]</a></span>
-          </div>
-        </div>
+    <section class="enter block" style="--delay:200ms" aria-labelledby="buy-now">
+      <p id="buy-now" class="kicker muted">Buy it now for £500</p>
+      <ul class="rows">
+        <li><a class="row-link" href="https://www.afternic.com/domain/gridconnection.co.uk" target="_blank" rel="noopener"><span>Buy on Afternic</span><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12h15M13 6l6 6-6 6"/></svg></a></li>
+        <!-- Replace with your Escrow.com "Buy It Now" link for this domain -->
+        <li><a class="row-link" href="https://www.escrow.com/" target="_blank" rel="noopener"><span>Buy via Escrow.com</span><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12h15M13 6l6 6-6 6"/></svg></a></li>
+      </ul>
+      <p class="note muted">Prefer to negotiate? Make an offer on Afternic.</p>
+    </section>
 
-        <h3 class="subhead">Who's searching</h3>
-        <div class="who">
-          <div><b>Solar, wind and battery firms</b><span>Teams who need a grid slot before they can build.</span></div>
-          <div><b>Data centre firms</b><span>The fastest-growing group, looking for sites with spare power.</span></div>
-          <div><b>Home builders and landowners</b><span>Builders whose new homes are stuck waiting for a substation.</span></div>
-          <div><b>EV charging and fleet depots</b><span>Firms that need a big new power supply at one site.</span></div>
-          <div><b>Businesses going electric</b><span>Factories, farms and estates adding heat pumps, solar panels or batteries.</span></div>
-          <div><b>Grid experts</b><span>Connection firms, advisers and lawyers who sell to all of the above.</span></div>
-        </div>
-      </div>
-    </div>
-  </section>
+    <section class="enter block" style="--delay:250ms" aria-labelledby="why-now">
+      <p class="kicker muted">Why now?</p>
+      <h2 id="why-now" class="display">The UK grid is the bottleneck.</h2>
+      <ul class="rows">
+        <li class="row-item"><h3>The line has been reset</h3><p class="muted">In December 2025, the grid operator cut the waiting list from 722 GW to 283 GW. Many firms now have to plan again.</p></li>
+        <li class="row-item"><h3>Huge sums are being spent</h3><p class="muted">Ofgem has approved £24bn so far. It expects about £80bn to be spent on the grid from 2026 to 2031.</p></li>
+        <li class="row-item"><h3>Demand is growing fast</h3><p class="muted">Requests to take power from the grid tripled in just seven months. Data centres led the way.</p></li>
+      </ul>
+    </section>
 
-  <section class="band" id="possibilities">
-    <div class="wrap">
-      <div class="side"><span class="label">03 · Possibilities</span><h2>What you could build</h2></div>
-      <div class="body">
-        <div class="ideas">
-          <div class="idea"><h3>Quote finder</h3><p>Match people who need a connection with firms that can do the work. Charge for each lead.</p></div>
-          <div class="idea"><h3>Advice firm brand</h3><p>A strong name for a firm that helps clients apply for and win a grid connection.</p></div>
-          <div class="idea"><h3>Grid capacity map</h3><p>Turn free public grid data into maps and alerts that show where there is spare power.</p></div>
-          <div class="idea"><h3>Your own company name</h3><p>An easy name to remember for an electrical contractor or energy adviser.</p></div>
-          <div class="idea"><h3>Project tracker app</h3><p>Help firms keep track of offers, dates and deadlines across all their sites.</p></div>
-          <div class="idea"><h3>Guides and news</h3><p>Explain the rules, costs and wait times in plain words. Grow an email list as you go.</p></div>
-        </div>
-      </div>
-    </div>
-  </section>
+    <section class="enter block" style="--delay:300ms" aria-labelledby="market">
+      <p class="kicker muted">How big is the market?</p>
+      <h2 id="market" class="display">A queue measured in gigawatts.</h2>
+      <ul class="rows">
+        <li class="row-item"><h3>722 GW waiting to connect</h3><p class="muted">Projects in the queue before the reset. That is about four times what the UK needs for its 2030 goals.</p><span class="src muted">NESO, December 2025 [1]</span></li>
+        <li class="row-item"><h3>£80bn of grid spending</h3><p class="muted">Planned spending on the power grid from 2026 to 2031. The first £24bn is already approved.</p><span class="src muted">Ofgem, July 2025 [2]</span></li>
+        <li class="row-item"><h3>41 GW to 125 GW in seven months</h3><p class="muted">Signed requests to take power from the grid, from November 2024 to June 2025.</p><span class="src muted">Ofgem, cited in [3]</span></li>
+        <li class="row-item"><h3>50.8 GW for data centres</h3><p class="muted">More than half of all big requests in the queue come from data centres.</p><span class="src muted">NESO, cited in [3]</span></li>
+      </ul>
+    </section>
 
-  <section class="band" id="name">
-    <div class="wrap">
-      <div class="side"><span class="label">04 · The name</span><h2>Why it works</h2></div>
-      <div class="body">
-        <div class="name-break" aria-hidden="true"><span>Grid</span><span>Connection</span><span>.co.uk</span></div>
-        <ul class="ticks">
-          <li><span><b>It is the word people use.</b> The regulator, the grid operator and the news all say "grid connection". Buyers already search for it.</span></li>
-          <li><span><b>.co.uk means UK.</b> The rules are different in each country. A UK ending tells people the help is for them.</span></li>
-          <li><span><b>It covers the whole topic.</b> Applying, costs, wait times and upgrades all fit under one name.</span></li>
-          <li><span><b>It is easy to say.</b> Two plain words that work on the phone, on a van or at a trade show.</span></li>
-          <li><span><b>It builds trust.</b> A clear name looks well established. That helps when you pitch for big jobs.</span></li>
-        </ul>
-      </div>
-    </div>
-  </section>
+    <section class="enter block" style="--delay:350ms" aria-labelledby="who">
+      <p class="kicker muted">Who is it for?</p>
+      <h2 id="who" class="display">Firms that get projects connected.</h2>
+      <ul class="rows">
+        <li class="row-plain">Solar, wind &amp; battery developers</li>
+        <li class="row-plain">Data centre operators</li>
+        <li class="row-plain">Home builders &amp; landowners</li>
+        <li class="row-plain">EV charging &amp; fleet depots</li>
+        <li class="row-plain">Grid connection advisers &amp; contractors</li>
+        <li class="row-plain">Lead generation platforms</li>
+      </ul>
+    </section>
 
-  <section class="band" id="buying">
-    <div class="wrap">
-      <div class="side"><span class="label">05 · How buying works</span><h2>Safe, simple transfer</h2></div>
-      <div class="body">
-        <p>You can buy through Afternic, which is run by GoDaddy, or through Escrow.com. Either way, a trusted third party holds your money until the domain is yours.</p>
-        <ol class="steps">
-          <li><span><b>Pay safely</b><span>Check out on Afternic, or start a £500 deal on Escrow.com. The seller never holds your money.</span></span></li>
-          <li><span><b>Your money is held</b><span>The platform checks your payment and keeps it safe during the move.</span></span></li>
-          <li><span><b>The domain moves to you</b><span>To move a .co.uk domain, the seller changes its tag to your registrar. You get simple steps to follow.</span></span></li>
-          <li><span><b>The seller gets paid</b><span>Once the domain is in your account, the money is released. Most moves take a few days.</span></span></li>
-        </ol>
-      </div>
-    </div>
-  </section>
+    <section class="enter block" style="--delay:400ms" aria-labelledby="why">
+      <p class="kicker muted">Why this domain?</p>
+      <h2 id="why" class="display">It is the word people already use.</h2>
+      <ul class="rows">
+        <li class="row-item"><h3>Says exactly what it is</h3><p class="muted">The regulator, the grid operator and the news all say "grid connection". Buyers already search for it.</p></li>
+        <li class="row-item"><h3>UK trust, built in</h3><p class="muted">The rules are different in each country. A .co.uk ending tells people the help is for them.</p></li>
+        <li class="row-item"><h3>Covers the whole topic</h3><p class="muted">Applying, costs, wait times and upgrades all fit under one name. It works for a quote finder, an advice firm or a news site.</p></li>
+      </ul>
+    </section>
 
-  <section class="closing" id="buy">
-    <div class="wrap">
-      <span class="label">Available now</span>
-      <h2>GridConnection.co.uk · £500</h2>
-      <p>One fixed price. No auction and no haggling. Get it before someone else does.</p>
-      <div class="btns">
-        <a class="btn btn-primary" href="https://www.afternic.com/domain/gridconnection.co.uk" rel="noopener" target="_blank">Buy on Afternic</a>
-        <a class="btn btn-ghost" href="https://www.escrow.com/" rel="noopener" target="_blank">Buy via Escrow.com</a>
-      </div>
-    </div>
-  </section>
-</main>
+    <section class="enter block" style="--delay:450ms" aria-labelledby="how">
+      <p class="kicker muted">How does buying work?</p>
+      <h2 id="how" class="display">Safe, simple transfer.</h2>
+      <ol class="rows">
+        <li class="row-item"><h3><span class="num">01</span>Choose your checkout</h3><p class="muted">Buy now on Afternic, or pay through Escrow.com if you prefer.</p></li>
+        <li class="row-item"><h3><span class="num">02</span>Your money is held safely</h3><p class="muted">The platform keeps your payment safe until the domain is yours.</p></li>
+        <li class="row-item"><h3><span class="num">03</span>The domain moves to you</h3><p class="muted">The domain moves to your registrar account, ready to point at your site.</p></li>
+      </ol>
+    </section>
 
-<footer>
-  <div class="wrap">
-    <span class="label">Sources</span>
-    <ol>
-      <li id="src-1">NESO connections reform results, reported by Solar Power Portal, 8 December 2025. <a href="https://www.solarpowerportal.co.uk/solar-planning/uk-grid-connections-reform-132gw-renewables-to-connect-by-2030" rel="noopener" target="_blank">solarpowerportal.co.uk</a> and <a href="https://www.energy-storage.news/?p=91698" rel="noopener" target="_blank">energy-storage.news</a></li>
-      <li id="src-2">Ofgem, "Ofgem approves initial £24 billion to operate and maintain critical gas networks and upgrade Britain's electricity supergrid", 1 July 2025. <a href="https://www.ofgem.gov.uk/press-release/ofgem-approves-initial-ps24-billion-operate-and-maintain-critical-gas-networks-and-upgrade-britains-electricity-supergrid" rel="noopener" target="_blank">ofgem.gov.uk</a></li>
-      <li id="src-3">PBC Today, "Housebuilders are queuing behind data centres that may never be built", 27 August 2026. <a href="https://www.pbctoday.co.uk/news/energy-news/housebuilders-queuing-behind-data-centres-may-never-be-built/165075/" rel="noopener" target="_blank">pbctoday.co.uk</a></li>
+    <section class="enter block" style="--delay:500ms" aria-labelledby="own">
+      <p class="kicker muted">Ready to own it?</p>
+      <h2 id="own" class="display">Own GridConnection.co.uk</h2>
+      <ul class="rows">
+        <li><a class="row-link" href="https://www.afternic.com/domain/gridconnection.co.uk" target="_blank" rel="noopener"><span>Buy on Afternic</span><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12h15M13 6l6 6-6 6"/></svg></a></li>
+        <!-- Replace with your Escrow.com "Buy It Now" link for this domain -->
+        <li><a class="row-link" href="https://www.escrow.com/" target="_blank" rel="noopener"><span>Buy via Escrow.com</span><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12h15M13 6l6 6-6 6"/></svg></a></li>
+      </ul>
+    </section>
+  </main>
+
+  <footer>
+    <a href="https://namefolio.co.uk">Namefolio.co.uk</a>
+    <p>© 2026 Namefolio</p>
+    <ol class="sources">
+      <li>NESO connections reform results, via <a href="https://www.solarpowerportal.co.uk/solar-planning/uk-grid-connections-reform-132gw-renewables-to-connect-by-2030" target="_blank" rel="noopener">Solar Power Portal</a>, December 2025.</li>
+      <li>Ofgem, <a href="https://www.ofgem.gov.uk/press-release/ofgem-approves-initial-ps24-billion-operate-and-maintain-critical-gas-networks-and-upgrade-britains-electricity-supergrid" target="_blank" rel="noopener">£24bn grid investment approval</a>, July 2025.</li>
+      <li>PBC Today, <a href="https://www.pbctoday.co.uk/news/energy-news/housebuilders-queuing-behind-data-centres-may-never-be-built/165075/" target="_blank" rel="noopener">housebuilders queuing behind data centres</a>, August 2026.</li>
     </ol>
-    <p>This page sells the domain name only. No website, business or trademark comes with it. GridConnection.co.uk is not linked to NESO, Ofgem or any network operator.</p>
-  </div>
-</footer>
+    <p class="disclaimer">This page sells the domain name only. Not affiliated with NESO, Ofgem or any network operator.</p>
+  </footer>
+</div>
 </body>
 </html>
